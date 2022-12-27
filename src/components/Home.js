@@ -1,569 +1,2024 @@
 import React, { useState } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { useEffect } from "react";
+import { useRef } from "react";
+import Homebtn from "../img/homebtn.png";
+import Shelterbtn from "../img/shelterbtn.png";
+import Flag from "../img/caflag.png";
+import Phone from "../img/phone.png";
+import Chat from "../img/chat.png";
+import Fb from "../img/fb.png";
+import Ig from "../img/ig.png";
+import Tw from "../img/tw.png";
+import Linkedin from "../img/linkedin.png";
+import Larrow from "../img/Larrow.png";
+import Banner from "../img/Hbanner.png";
+import Img1 from "../img/img1.png";
+import X from "../img/x.png";
+import Plus from "../img/plus.png";
+import Polygon from "../img/polygon.png";
+import Polygonwhite from "../img/polygonwhite.png";
+import BgPolygon from "../img/bgPolygon.png";
+import PolygonHv from "../img/polygonhv.png";
+import Tick from "../img/tick.png";
+import CR1 from "../img/CR1.png";
+import CR1B1 from "../img/carousel/carousel1B1.png";
+import CR1B2 from "../img/carousel/carousel1B2.png";
+import CR1B3 from "../img/carousel/carousel1B3.png";
+import CR2 from "../img/carousel/Carousel2.png";
+import CR2B1 from "../img/carousel/carousel2B1.png";
+import CR2B2 from "../img/carousel/carousel2B2.png";
+import CR2B3 from "../img/carousel/carousel2B3.png";
+import CR3 from "../img/carousel/Carousel3.png";
+import CR3B1 from "../img/carousel/carousel3B1.png";
+import CR3B2 from "../img/carousel/carousel3B2.png";
+import CR3B3 from "../img/carousel/carousel3B3.png";
+import Prev from "../img/carousel/prev.png";
+import Next from "../img/carousel/next.png";
 const Home = () => {
-  const [left, setleft] = useState(0.0);
-  const [prev, setprev] = useState(0.0);
-  const Prev = () => {
-    if (left == 0) {
-    } else {
-      setleft(left + 100);
-    }
-  };
-  const Next = () => {
-    if (left == -300) {
-    } else {
-      setleft(left - 100);
-    }
-  };
+  const [R1, setR1] = useState(false);
+  const [R2, setR2] = useState(false);
+  const [R3, setR3] = useState(false);
+  const [R4, setR4] = useState(false);
 
-  const settings = {
-    dots: false,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-  };
+  const [Pg, setPg] = useState(false);
+
+  const [carousel1, setcarousel] = useState(1);
+  const [carousel2, setcarouse2] = useState(1);
+  const [carousel3, setcarouse3] = useState(1);
+
+  const [P1, setP1] = useState(true);
+  const [P2, setP2] = useState(false);
+  const [P3, setP3] = useState(false);
+  const [P4, setP4] = useState(false);
+
+const [Q1, setQ1] = useState(1)
+const [Q2, setQ2] = useState(1)
+const [Q3, setQ3] = useState(1)
+
   return (
     <>
-      {/* -------------OVERLAY----------------- */}
-      <section className="w-[100%] bg-[rgba(38,38,38,0.25)] absolute  z-[100]">
-
-      <div className="bg-[#FAF6F4] w-[45.1rem] pt-[4.9rem] relative">
-<div className="w-[3rem] h-[3rem] border border-black rounded-full absolute top-[2rem] right-[2rem]">
-
-</div>
-
-        <div className="w-[36.2rem] h-[34.9rem] rounded-full  ml-[3.4rem] bg-slate-500"></div>
-        <div className="text-[#262626] ml-[3.4rem] w-[36.2rem]">
-          <h1 className=" text-[4rem] leading-[4.8rem] mt-[5.7rem]">
-            Dr. Lauren Redies
-          </h1>
-          <p className=" text-[1.4rem] leading-[1.8rem] ">
-            Medical Director, Streeterville
-          </p>
-
-          <p className=" text-[1.8rem] leading-[2.4rem]  mt-[4rem] ">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-            pellentesque, lacus quis maximus porta, lorem lectus egestas arcu,
-            vitae porttitor sem quam quis nisl. Sed non ligula hendrerit,
-            bibendum quam at, congue magna. Aenean ac maximus libero. Mauris
-            fermentum neque ut diam dignissim, id lacinia magna posuere.
-          </p>
-
-          <div className="mt-[9.1rem]">
-            <h2 className="text-[#FEC20D] text-[2.2rem] leading-[2.9rem] font-semibold">
-              What (or who) inspired you to get into Pet care? How so?
-            </h2>
-            <p className=" text-[1.8rem] leading-[2.4rem]  mt-[2rem] font-[500]">
-              Ever since I was a child, I was always loved animails, so I
-              decided to become a Veterinarian.
-            </p>
+      <header>
+        <nav className="h-[12.2rem] w-[164rem] m-auto flex justify-between items-center">
+          <ul className="flex w-[52.2rem] justify-between">
+            <li>
+              <a href="" className="text-[1.8rem] font-[500] leading-[3.2rem] ">
+                {" "}
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="" className="text-[1.8rem] font-[500] leading-[3.2rem]">
+                Shelters
+              </a>
+            </li>
+            <li>
+              <a href="" className="text-[1.8rem] font-[500] leading-[3.2rem]">
+                Projects
+              </a>
+            </li>
+            <li>
+              <a href="" className="text-[1.8rem] font-[500] leading-[3.2rem]">
+                About
+              </a>
+            </li>
+            <li>
+              <a href="" className="text-[1.8rem] font-[500] leading-[3.2rem]">
+                Contacts
+              </a>
+            </li>
+          </ul>
+          <div className="flex">
+            <button
+              className="mr-[.5rem] w-[25.9rem] h-[5rem] rounded-[.6rem] text-[1.6rem] font-[700] leading-[3rem] text-white flex justify-center items-center"
+              style={{
+                background:
+                  "linear-gradient(90deg, #7D3E1C -12.18%, #FA9C6A 51.93%, #7E3F1E 113.4%)",
+                boxShadow: "4px 38px 62px rgba(0, 0, 0, 0.1)",
+              }}
+            >
+              <img src={Homebtn} className="mr-[1rem]" alt="" />
+              DESIGN YOUR SHELTER
+            </button>
+            <button
+              className="mr-[2rem] w-[31.2rem] h-[5rem] rounded-[.6rem] text-[1.6rem] font-[700] leading-[3rem] text-white flex justify-center items-center"
+              style={{
+                background:
+                  "linear-gradient(270deg, #000000 0%, #5A5A5A 50.01%, #000000 100%)",
+                boxShadow: "4px 38px 62px rgba(0, 0, 0, 0.1)",
+              }}
+            >
+              <img src={Shelterbtn} className="mr-[1rem]" alt="" />
+              BROWSE SHELTERS IN STOCK
+            </button>
+            <button>
+              <img src={Flag} alt="" />
+            </button>
           </div>
-          <div className="mt-[4rem]">
-            <h2 className="text-[#FEC20D] text-[2.2rem] leading-[2.9rem] font-semibold">
-            What’s the most rewarding part of your job at GoodVets?
-            </h2>
-            <p className=" text-[1.8rem] leading-[2.4rem]  mt-[2rem] font-[500]">
-            Aliquam vitae dictum turpis. Proin tincidunt imperdiet augue a tristique. Maecenas nec purus quis nunc bibendum venenatis sed porta orci. Vivamus hendrerit non ligula id maximus.
+        </nav>
+      </header>
+
+      {/* HERO SECTION------------------- */}
+      <section>
+        {/* --------TOP----------- */}
+        <div
+          className="h-[7.9rem] flex justify-center items-center"
+          style={{
+            background:
+              "linear-gradient(270deg, #000000 0%, #5A5A5A 50.01%, #000000 100%)",
+          }}
+        >
+          <div className="w-[164rem] m-auto flex justify-between items-center relative">
+            <div className="flex">
+              <button
+                className="w-[19.7rem] h-[5rem] rounded-[.6rem] text-[2rem] leading-[2.8rem] font-[500] text-white flex justify-center items-center mr-[2rem]"
+                style={{
+                  background:
+                    "linear-gradient(90deg, #7D3E1C -12.18%, #FA9C6A 51.93%, #7E3F1E 113.4%)",
+                }}
+              >
+                <img src={Phone} alt="" className="mr-[.8rem]" /> 123 456 789
+              </button>
+              <button
+                className="w-[19.7rem] h-[5rem] rounded-[.6rem] text-[2rem] leading-[2.8rem] font-[500] text-white flex justify-center items-center bg-transparent"
+                style={{
+                  background:
+                    "linear-gradient(90deg, #7D3E1C -12.18%, #FA9C6A 51.93%, #7E3F1E 113.4%)",
+                }}
+              >
+                <div
+                  className="w-[19.3rem] h-[4.6rem]  rounded-[.6rem] flex justify-center items-center"
+                  style={{
+                    background:
+                      "linear-gradient(270deg, #000000 0%, #5A5A5A 50.01%, #000000 100%)",
+                  }}
+                >
+                  <img src={Chat} alt="" className="mr-[.8rem]" /> Live Chat
+                </div>
+              </button>
+            </div>
+
+            <p className="text-[2rem] font-[500] leading-[2.8erm] text-white absolute left-[54.1rem]">
+              For pricing information we can provide better service by email
             </p>
-          </div>
-          <div className="mt-[9.1rem]">
-            <h2 className="text-[#FEC20D] text-[2.2rem] leading-[2.9rem] font-semibold">
-            How do you recharge after a long week? What’s your go-to activity for hitting the restart button?
-            </h2>
-            <p className=" text-[1.8rem] leading-[2.4rem]  mt-[2rem] font-[500]">
-            Aliquam vitae dictum turpis. Proin tincidunt imperdiet augue a tristique. Maecenas nec purus quis nunc.
-            </p>
-          </div>
-          <div className="mt-[9.1rem]">
-            <h2 className="text-[#FEC20D] text-[2.2rem] leading-[2.9rem] font-semibold">
-            In another life, if you weren’t working in Pet care, what would you be doing?
-            </h2>
-            <p className=" text-[1.8rem] leading-[2.4rem]  mt-[2rem] font-[500]">
-            Aliquam vitae dictum turpis. Proin tincidunt imperdiet augue a tristique. Maecenas nec purus quis nunc.
-            </p>
+
+            <div className="w-[18rem] flex justify-between items-center">
+              <img src={Fb} alt="" />
+              <img src={Linkedin} alt="" />
+              <img src={Ig} alt="" />
+              <img src={Tw} alt="" />
+            </div>
           </div>
         </div>
-      </div>
+
+        {/* MAIN------- */}
+        <div className="bg-[#F9F3E9] pt-[16.9rem] pb-[18.5rem]">
+          <div className="w-[164rem] m-auto flex justify-between items-center">
+            <div>
+              <p className="font-[500] text-[2.6rem] leading-[3.5rem]">
+                Proudly Serving British Columbia Since 2017
+              </p>
+              <div className="font-[700] text-[6rem] leading-[7rem] w-[73.9rem] mt-[2rem] mb-[3rem]">
+                The Easiest{" "}
+                <span className="text-[#7D3E1C] "> Structures </span>
+                To Use In The World’s Most Difficult Conditions
+              </div>
+              <p className="font-[500] leading-[3.6rem] text-[2.4rem] text-[#454545] w-[68.1rem]">
+                Alpine Structures provides its customers with only high quality
+                durable steel and PVC Faberic Shelters
+              </p>
+              <button
+                className="w-[21.2rem] h-[5rem] rounded-[.6rem] text-[2rem] leading-[2.8rem] mt-[3rem] font-[500] text-white flex justify-center items-center mr-[2rem]"
+                style={{
+                  background:
+                    "linear-gradient(90deg, #7D3E1C -12.18%, #FA9C6A 51.93%, #7E3F1E 113.4%)",
+                }}
+              >
+                Discover More <img src={Larrow} alt="" className="ml-[1rem]" />
+              </button>
+            </div>
+            <img src={Banner} alt="" />
+          </div>
+        </div>
+
+        <div
+          className="h-[20.9rem] flex justify-center items-center"
+          style={{
+            background:
+              "linear-gradient(270deg, #000000 0%, #5A5A5A 50.01%, #000000 100%)",
+          }}
+        >
+          <div className="w-[164rem] m-auto flex justify-between items-center ">
+            <p className="text-[4rem] font-[700] leading-[6erm] text-white">
+              MILLION Square Feet Sold! Contact Us Today
+            </p>
+            <div className="flex">
+              <button
+                className="mr-[2rem] w-[25.9rem] h-[5rem] rounded-[.6rem] text-[1.6rem] font-[700] leading-[3rem] text-white flex justify-center items-center"
+                style={{
+                  background:
+                    "linear-gradient(90deg, #7D3E1C -12.18%, #FA9C6A 51.93%, #7E3F1E 113.4%)",
+                  boxShadow: "4px 38px 62px rgba(0, 0, 0, 0.1)",
+                }}
+              >
+                <img src={Homebtn} className="mr-[1rem]" alt="" />
+                DESIGN YOUR SHELTER
+              </button>
+              <button
+                className="mr-[2rem] w-[31.2rem] h-[5rem] rounded-[.6rem] text-[1.6rem] font-[700] leading-[3rem] text-white flex justify-center items-center"
+                style={{
+                  background:
+                    "linear-gradient(270deg, #000000 0%, #5A5A5A 50.01%, #000000 100%)",
+                  boxShadow: "4px 38px 62px rgba(0, 0, 0, 0.1)",
+                }}
+              >
+                <img src={Shelterbtn} className="mr-[1rem]" alt="" />
+                BROWSE SHELTERS IN STOCK
+              </button>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <section className="main bg-slate-500 h-[62.2rem]">
-        <header className="border-b border-white">
-          <nav className="flex justify-between items-center">
-            <h1 className="font-bold text-4xl ml-[3.4rem] my-8 text-white">
-              GoodVets
+      {/* SECTION 2----------------- */}
+      <section className="bg-[#F9F3E9]">
+        <div className="w-[164rem] flex justify-between items-center m-auto pt-[10rem] ">
+          <div className="flex flex-col justify-center items-center">
+            <h1 className="text-[4rem] leading-[6rem] font-[700] mb-[5.6rem]">
+              20’W X 30’L X 12’H Storage Shelter Tent
             </h1>
-            <ul className="  flex justify-end mr-[6rem] text-white items-center pt-[2.6rem] pb-[2.8rem]">
-              <li className="text-[1.4rem] leading-8 uppercase mr-[7.1rem]">
-                Locations
-              </li>
-              <li className="text-[1.4rem] leading-8 uppercase mr-[6.5rem]">
-                Services
-              </li>
-              <li className="text-[1.4rem] leading-8 uppercase mr-[6.3rem]">
-                Wellness Plans
-              </li>
-              <li className="text-[1.4rem] leading-8 uppercase mr-[6rem]">
-                Join Us
-              </li>
-              <li className="text-[1.4rem] leading-8 uppercase  w-56 flex justify-center items-center border rounded-3xl py-1.5 border-white">
-                Book Now
-              </li>
-            </ul>
-          </nav>
-        </header>
-        <div className="main flex justify-center items-center flex-col">
-          <p className="text-[1.4rem] mt-[13.8rem] mb-8 w-[16rem] bg-yellow-500  h-[1.8rem] uppercase text-center font-semibold">
-            Associative Vets
-          </p>
-          <h1 className="text-[7rem]  text-center text-white leading-[8rem] ">
-            A Vet-Owned Hospital,
-            <br /> Invested in You
-          </h1>
-        </div>
-        <button className="text-[1.4rem] leading-[2rem] text-[#262626] w-[21.3rem] h-[5rem] bg-[#FEC20D] rounded-[5rem] absolute right-[3.5rem] top-[65.8rem] hover:bg-[#262626] hover:text-white">
-          VIEW OPPORTUNITIES
-        </button>
-      </section>
-
-      <section className="section2 bg-[#faf6f4] rounded-t-2xl h-[38.2rem]">
-        <p className="w-[112.2rem] text-[#262626] text-[4rem] mx-auto text-center pt-[7.4rem] font-semibold leading-[4.8rem]">
-          As an associate veterinarian at GoodVets, you'll be mentored by a
-          partner veterinarian who is personally invested in your success.
-        </p>
-      </section>
-
-      <section className="section3 pb-[10rem]">
-        <h1 className="text-[7rem] leading-[8rem] mx-auto my-40 text-center">
-          A Culture of <span className="text-yellow-500"> Mentorship</span>
-        </h1>
-        <div className="relative flex justify-center items-center flex-col">
-          <div className="absolute w-[94.8%] z-10  flex justify-between items-center top-[18rem] ">
-            <button
-              className="p-[1rem] border border-black rounded-full h-[5rem] w-[5rem] hover:bg-[#FEC20D] hover:border-transparent"
-              onClick={Prev}
-            >
-              Prev
-            </button>
-            <button
-              className="p-[1rem] border border-black rounded-full h-[5rem] w-[5rem] hover:bg-[#FEC20D] hover:border-transparent"
-              onClick={Next}
-            >
-              Next
-            </button>
+            <img src={Img1} alt="" />
           </div>
-          <div className="rows flex max-w-[136.6rem] overflow-hidden">
-            <div
-              className={`row1 flex justify-center min-w-[100%] relative transition-all duration-[0.5s] ease-in-out`}
-              style={{ position: "relative", left: `${left}%` }}
-            >
-              <div className="r1 mx-[3.9rem] h-[42rem] w-[58.2rem] bg-slate-300 rounded-[6px]"></div>
-              <div className="r2 mx-[3.9rem] flex flex-col justify-center items-start text-[#282826]">
-                <h1 className=" text-[4rem] leading-[4.8rem] font-semibold mb-8 ">
-                  Veterinarian-Led <br /> Medicine
-                </h1>
-                <p className="w-[47.2rem] text-[1.8rem] leading-[2.4rem]">
-                  Our partner veterinarians design their own medical programs,
-                  so you'll be learning from and working with your hospital's
-                  top dog.
-                </p>
-              </div>
-            </div>
-            <div
-              className={`row1 flex justify-center min-w-[100%] relative transition-all duration-[0.5s] ease-in-out`}
-              style={{ position: "relative", left: `${left}%` }}
-            >
-              <div className="r1 mx-[3.9rem] h-[42rem] w-[58.2rem] bg-slate-300 rounded-[6px]"></div>
-              <div className="r2 mx-[3.9rem] flex flex-col justify-center items-start text-[#282826]">
-                <h1 className=" text-[4rem] leading-[4.8rem] font-semibold mb-8 ">
-                  Mentorship From Our <br /> Chief Medical Officer
-                </h1>
-                <p className="w-[47.2rem] text-[1.8rem] leading-[2.4rem]">
-                  Our Chief Medical Officer, Dr. Antonio DeMarco, aids in the
-                  growth and development of every associate, helping craft the
-                  career path that's right for you.
-                </p>
-              </div>
-            </div>
-            <div
-              className={`row1 flex justify-center min-w-[100%] relative transition-all duration-[0.5s] ease-in-out`}
-              style={{ position: "relative", left: `${left}%` }}
-            >
-              <div className="r1 mx-[3.9rem] h-[42rem] w-[58.2rem] bg-slate-300 rounded-[6px]"></div>
-              <div className="r2 mx-[3.9rem] flex flex-col justify-center items-start text-[#282826]">
-                <h1 className=" text-[4rem] leading-[4.8rem] font-semibold mb-8 ">
-                  Education from our <br /> Veterinary Advisor
-                </h1>
-                <p className="w-[47.2rem] text-[1.8rem] leading-[2.4rem]">
-                  Dr. Cindy Charlier architects tailored training programs and
-                  provides guidance on continuing education for associates.
-                </p>
-              </div>
-            </div>
-            <div
-              className={`row1 flex justify-center min-w-[100%] relative transition-all duration-[0.5s] ease-in-out`}
-              style={{ position: "relative", left: `${left}%` }}
-            >
-              <div className="r1 mx-[3.9rem] h-[42rem] w-[58.2rem] bg-slate-300 rounded-[6px]"></div>
-              <div className="r2 mx-[3.9rem] flex flex-col justify-center items-start text-[#282826]">
-                <h1 className=" text-[4rem] leading-[4.8rem] font-semibold mb-8 ">
-                  Professional & <br /> Performance Coaching
-                </h1>
-                <p className="w-[47.2rem] text-[1.8rem] leading-[2.4rem]">
-                  As an Associate, you’ll be connected to a dedicated business
-                  coach from Boon Health, who can advise on everything from work
-                  challenges to interpersonal relationships.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="h-[81.6rem] bg-[#FAF6F4] mt-[-3rem]">
-        <div>
-          <div className="flex flex-col justify-start items-center relative">
-            <div className="h-[24.3rem] w-[25.2rem] bg-slate-500 rounded-[100%] relative top-[14rem] z-10"></div>
-            <div className="w-[107.7rem] bg-[rgba(154,217,183,0.25)] h-[37.3rem] flex flex-col justify-start pt-[10rem] items-center absolute top-[30.3rem]">
-              <p className="font-semibold text-center text-[4rem] leading-[4.8rem] text-[#282826] w-[85.7rem]">
-                “GoodVets has fulfilled my wants and needs as an owner and Vet.
-                I am living my best life.“
-              </p>
-              <p className="text-[1.4rem] text-[#262626] text-center uppercase mt-[4rem]">
-                DR. SCHAUER - MEDICAL DIRECTOR <br /> STREETERVILLE
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="flex flex-col justify-center items-center">
-        <h1 className="text-[7rem] mx-auto my-40 text-center leading-[8rem]  ">
-          Many Ways to Take
-          <span className="text-yellow-500"> Ownership</span>
-        </h1>
-        <div className="rows">
-          <div className="row1 flex justify-center mt-[4rem]">
-            <div className="r1 mx-[3.9rem] h-[40rem] w-[58.2rem] bg-slate-300 rounded-[6px] relative">
-              <div className="w-[22.4rem] h-[21.6rem] bg-[#D9C7B8] rounded-[100%] absolute right-[-10rem] top-[-10rem] text-[10rem] flex justify-center items-center">
-                1
-              </div>
-            </div>
-            <div className="r2 mx-[3.9rem] flex flex-col justify-end pb-[6rem] items-start text-[#282826]">
-              <h1 className=" text-[4rem] leading-[4.8rem] font-semibold mb-8 ">
-                Expand Your Expertise
-              </h1>
-              <p className="w-[47.2rem] text-[1.8rem] leading-[2.4rem]">
-                Working at GoodVets is an education unto itself. You’ll be
-                mentored by visionary partner vets, practice alongside talented
-                peers, and uncover your own unique skills and passions.
-              </p>
-            </div>
-          </div>
-          <div className="row1 flex justify-center mt-[20rem] flex-row-reverse">
-            <div className="r1 mx-[3.9rem] h-[40rem] w-[58.2rem] bg-slate-300 rounded-[6px] relative">
-              <div className="w-[22.4rem] h-[21.6rem] bg-[#D9C7B8] rounded-[100%] absolute left-[-10rem] top-[-10rem] text-[10rem] flex justify-center items-center">
-                2
-              </div>
-            </div>
-            <div className="r2 mx-[3.9rem] flex flex-col justify-end pb-[6rem] items-start text-[#282826]">
-              <h1 className=" text-[4rem] leading-[4.8rem] font-semibold mb-8 ">
-                Access to Equity
-              </h1>
-              <p className="w-[47.2rem] text-[1.8rem] leading-[2.4rem]">
-                As an associate veterinarian, you have a unique opportunity to
-                invest in the hospital where you work. As a co-owner, you’ll
-                share in the hospital’s success and gain entrepreneurial
-                experience that complements your medical training.
-              </p>
-            </div>
-          </div>
-          <div className="row1 flex justify-center mt-[20rem]">
-            <div className="r1 mx-[3.9rem] h-[40rem] w-[58.2rem] bg-slate-300 rounded-[6px] relative">
-              <div className="w-[22.4rem] h-[21.6rem] bg-[#D9C7B8] rounded-[100%] absolute right-[-10rem] top-[-10rem] text-[10rem] flex justify-center items-center">
-                3
-              </div>
-            </div>
-            <div className="r2 mx-[3.9rem] flex flex-col justify-end pb-[6rem] items-start text-[#282826]">
-              <h1 className=" text-[4rem] leading-[4.8rem] font-semibold mb-8 ">
-                Pursue the Path <br /> to Ownership
-              </h1>
-              <p className="w-[47.2rem] text-[1.8rem] leading-[2.4rem]">
-                Co-owning and running your own hospital is the natural
-                progression for many—though not all—of our associates. If that’s
-                your goal, we’re ready to help you achieve it.
-              </p>
-            </div>
-          </div>
-        </div>
-        <h1 className="text-8xl mx-auto mb-[8rem] mt-[10rem] text-center">
-          Get <span className="text-yellow-500"> Started!</span>
-        </h1>
-        <button className="border border-black px-[3rem] py-[1.6rem] text-[1.4rem] leading-[2rem] rounded-[5rem] mx-auto  hover:bg-[#FEC20D] hover:border-[#FEC20D]">
-          LEARN ABOUT PARTNERSHIP
-        </button>
-      </section>
-
-      <section className="bg-[rgba(217,199,184,0.25)] mt-[9.9rem] pb-[10rem] flex flex-col items-end">
-        <h1 className="text-[4rem] font-semibold leading-[4.8rem] pt-[10rem] mb-[10rem] text-[#262626] w-screen pl-[8.9rem]">
-          Modular
-        </h1>
-        <div className="max-w-[124.3rem] Modular">
-          <Slider {...settings}>
-            <div className="w-[58.2rem]">
-              <div className="w-[100] h-[40rem] bg-slate-400 m-0"></div>
-              <p className="text-[1.4rem] mt-[2rem]">Image Caption</p>
-            </div>
-            <div className="w-[58.2rem]">
-              <div className="w-[100] h-[40rem] bg-slate-400 m-0"></div>
-              <p className="text-[1.4rem] mt-[2rem]">Image Caption</p>
-            </div>
-            <div className="w-[58.2rem]">
-              <div className="w-[100] h-[40rem] bg-slate-400 m-0"></div>
-              <p className="text-[1.4rem] mt-[2rem]">Image Caption</p>
-            </div>
-            <div className="w-[58.2rem]">
-              <div className="w-[100%] h-[40rem] bg-slate-400 m-0"></div>
-              <p className="text-[1.4rem] mt-[2rem]">Image Caption</p>
-            </div>
-          </Slider>
-        </div>
-      </section>
-
-      <section className="bg-[#FAF6F4]">
-        <h1 className="text-[7rem] leading-[8rem] text-center py-[10rem]">
-          Associate Vets Benefits
-        </h1>
-        <div className="ml-[4.1rem] flex">
           <div>
-            <div className="h-[1.8rem] w-[8.2rem] bg-[#FEC20D]">
-              <h1 className="font-semibold text-[1.4rem] leading-[1.8rem] relative top-[-.6rem] left-[-.8rem] text-[#282826]">
-                FINANCIAL
-              </h1>
+            <div>
+              {/* ----ACCORDIANS----- */}
+              <div
+                class=" w-[57.8rem]  cursor-pointer"
+                onClick={() => setR1(!R1)}
+              >
+                <div class="top">
+                  <h2 className=" pb-[1.5rem] flex justify-start items-center font-[700] text-[3rem] leading-[6rem]  border-b-2 border-[#7D3E1C]">
+                    {" "}
+                    <img
+                      src={R1 ? X : Plus}
+                      className="mr-[1.2rem]"
+                      alt=""
+                    />{" "}
+                    Exterior
+                  </h2>
+                </div>
+                <div
+                  className="pb-[6.1rem] flex flex-col"
+                  style={R1 ? { display: "flex" } : { display: "none" }}
+                >
+                  <h1 className="font-[700] text-[3rem] leading-[6rem]">
+                    Color
+                  </h1>
+                  <div className="flex">
+                    <div>
+                      <p className="font-[700] text-[1.6rem] leading-[1.8rem]">
+                        White
+                      </p>
+                      <div className="bg-white border-2 border-[#7D3E1C] rounded-[.6rem] mt-[.5rem] w-[7.7rem] h-[7.9rem]"></div>
+                    </div>
+                    <div className="ml-[3.4rem]">
+                      <p className="font-[700] text-[1.6rem] leading-[1.8rem]">
+                        Black
+                      </p>
+                      <div className="bg-black  rounded-[.6rem] mt-[.5rem] w-[7.7rem] h-[7.9rem]"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class=" w-[57.8rem] mt-[1.2rem] cursor-pointer"
+                onClick={() => setR2(!R2)}
+              >
+                <div class="top">
+                  <h2 className=" pb-[1.5rem] flex justify-start items-center font-[700] text-[3rem] leading-[6rem]  border-b-2 border-[#7D3E1C]">
+                    {" "}
+                    <img
+                      src={R2 ? X : Plus}
+                      className="mr-[1.2rem]"
+                      alt=""
+                    />{" "}
+                    Interios
+                  </h2>
+                </div>
+                <div
+                  className="pb-[6.1rem] flex flex-col"
+                  style={R2 ? { display: "flex" } : { display: "none" }}
+                >
+                  <h1 className="font-[700] text-[3rem] leading-[6rem]">
+                    Color
+                  </h1>
+                  <div className="flex">
+                    <div>
+                      <p className="font-[700] text-[1.6rem] leading-[1.8rem]">
+                        White
+                      </p>
+                      <div className="bg-white border-2 border-[#7D3E1C] rounded-[.6rem] mt-[.5rem] w-[7.7rem] h-[7.9rem]"></div>
+                    </div>
+                    <div className="ml-[3.4rem]">
+                      <p className="font-[700] text-[1.6rem] leading-[1.8rem]">
+                        Black
+                      </p>
+                      <div className="bg-black  rounded-[.6rem] mt-[.5rem] w-[7.7rem] h-[7.9rem]"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class=" w-[57.8rem] mt-[1.2rem] cursor-pointer"
+                onClick={() => setR3(!R3)}
+              >
+                <div class="top">
+                  <h2 className=" pb-[1.5rem] flex justify-start items-center font-[700] text-[3rem] leading-[6rem]  border-b-2 border-[#7D3E1C]">
+                    {" "}
+                    <img
+                      src={R3 ? X : Plus}
+                      className="mr-[1.2rem]"
+                      alt=""
+                    />{" "}
+                    Accessories
+                  </h2>
+                </div>
+                <div
+                  className="pb-[6.1rem] flex flex-col"
+                  style={R3 ? { display: "flex" } : { display: "none" }}
+                >
+                  <h1 className="font-[700] text-[3rem] leading-[6rem]">
+                    Color
+                  </h1>
+                  <div className="flex">
+                    <div>
+                      <p className="font-[700] text-[1.6rem] leading-[1.8rem]">
+                        White
+                      </p>
+                      <div className="bg-white border-2 border-[#7D3E1C] rounded-[.6rem] mt-[.5rem] w-[7.7rem] h-[7.9rem]"></div>
+                    </div>
+                    <div className="ml-[3.4rem]">
+                      <p className="font-[700] text-[1.6rem] leading-[1.8rem]">
+                        Black
+                      </p>
+                      <div className="bg-black  rounded-[.6rem] mt-[.5rem] w-[7.7rem] h-[7.9rem]"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class=" w-[57.8rem]  mt-[1.2rem] cursor-pointer"
+                onClick={() => setR4(!R4)}
+              >
+                <div class="top">
+                  <h2 className="pb-[1.5rem] flex justify-start items-center font-[700] text-[3rem] leading-[6rem]  border-b-2 border-[#7D3E1C]">
+                    {" "}
+                    <img
+                      src={R4 ? X : Plus}
+                      className="mr-[1.2rem]"
+                      alt=""
+                    />{" "}
+                    Packaging
+                  </h2>
+                  <h3>{R1 ? "-" : "+"}</h3>
+                </div>
+                <div
+                  className="pb-[6.1rem] flex flex-col"
+                  style={R4 ? { display: "flex" } : { display: "none" }}
+                >
+                  <h1 className="font-[700] text-[3rem] leading-[6rem]">
+                    Color
+                  </h1>
+                  <div className="flex">
+                    <div>
+                      <p className="font-[700] text-[1.6rem] leading-[1.8rem]">
+                        White
+                      </p>
+                      <div className="bg-white border-2 border-[#7D3E1C] rounded-[.6rem] mt-[.5rem] w-[7.7rem] h-[7.9rem]"></div>
+                    </div>
+                    <div className="ml-[3.4rem]">
+                      <p className="font-[700] text-[1.6rem] leading-[1.8rem]">
+                        Black
+                      </p>
+                      <div className="bg-black  rounded-[.6rem] mt-[.5rem] w-[7.7rem] h-[7.9rem]"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="w-[41.7rem] h-[20rem] bg-white mt-[3.3rem]">
-              <h1 className="ml-[5.6rem] text-[1.4rem] leading-[1.8rem] pt-[1.6rem] mb-[3.2rem]">
-                Leading compensation and bonuses
+            <div className="flex w-[100%] justify-between items-center mt-[3.5rem]">
+              <h1 className="font-[700] text-[4rem] leading-[6rem]">
+                {" "}
+                $9,499.05 CAD
               </h1>
-              <h1 className="ml-[5.6rem] text-[1.4rem] leading-[1.8rem] mb-[3.2rem]">
-                Annual raises
-              </h1>
-              <h1 className="ml-[5.6rem] text-[1.4rem] leading-[1.8rem] mb-[3.2rem]">
-                401k matching
-              </h1>
-              <h1 className="ml-[5.6rem] text-[1.4rem] leading-[1.8rem] mb-[3.2rem]">
-                Profit sharing
-              </h1>
-            </div>
-          </div>
-
-          <div className="ml-[2.3rem]">
-            <div className="h-[1.8rem] w-[20rem] bg-[#FEC20D]">
-              <h1 className="font-semibold text-[1.4rem] leading-[1.8rem] relative top-[-.6rem] left-[-.8rem] text-[#282826]">
-                QUALITY OF CARE & CAREER
-              </h1>
-            </div>
-            <div className="w-[41.7rem] h-[25rem] bg-white mt-[3.3rem]">
-              <h1 className="ml-[5.6rem] text-[1.4rem] leading-[1.8rem] pt-[1.6rem] mb-[3.2rem]">
-                Favorable staffing ratios
-              </h1>
-              <h1 className="ml-[5.6rem] text-[1.4rem] leading-[1.8rem] mb-[3.2rem]">
-                Practice medicine alongside hospital owners
-              </h1>
-              <h1 className="ml-[5.6rem] text-[1.4rem] leading-[1.8rem] mb-[3.2rem]">
-                Continuing education & license support
-              </h1>
-              <h1 className="ml-[5.6rem] text-[1.4rem] leading-[1.8rem] mb-[3.2rem]">
-                Hospital-level growth opportunities
-              </h1>
-              <h1 className="ml-[5.6rem] text-[1.4rem] leading-[1.8rem] mb-[3.2rem]">
-                Best-in-class facilities and technology
-              </h1>
-            </div>
-          </div>
-          <div className="ml-[2.3rem]">
-            <div className="h-[1.8rem] w-[20rem] bg-[#FEC20D]">
-              <h1 className="font-semibold text-[1.4rem] leading-[1.8rem] relative top-[-.6rem] left-[-.8rem] text-[#282826]">
-                QUALITY OF LIFE
-              </h1>
-            </div>
-            <div className="w-[41.7rem] h-[20rem] bg-white mt-[3.3rem]">
-              <h1 className="ml-[5.6rem] text-[1.4rem] leading-[1.8rem] pt-[1.6rem] mb-[3.2rem]">
-                Leading compensation and bonuses
-              </h1>
-              <h1 className="ml-[5.6rem] text-[1.4rem] leading-[1.8rem] mb-[3.2rem]">
-                Annual raises
-              </h1>
-              <h1 className="ml-[5.6rem] text-[1.4rem] leading-[1.8rem] mb-[3.2rem]">
-                401k matching
-              </h1>
-              <h1 className="ml-[5.6rem] text-[1.4rem] leading-[1.8rem] mb-[3.2rem]">
-                Profit sharing
-              </h1>
+              <button
+                className="w-[18.8rem] h-[5rem] rounded-[.6rem] text-[2rem] leading-[2.8rem] font-[500] text-white flex justify-center items-center"
+                style={{
+                  background:
+                    "linear-gradient(90deg, #7D3E1C -12.18%, #FA9C6A 51.93%, #7E3F1E 113.4%)",
+                }}
+              >
+                Place Order <img src={Larrow} alt="" className="ml-[1rem]" />
+              </button>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#FAF6F4] pt-40 flex justify-center items-center flex-col">
-        <h1 className="text-[7rem] mx-auto mb-[9rem] text-center leading-[8rem]  ">
-          Launch your career
-          <span className="text-yellow-500"> now</span>
+      {/* SECTION3  */}
+      <section className="bg-[#F9F3E9] pt-[22.1rem] relative">
+        <h1 className="leading-[6rem] text-[6rem] font-[700] m-auto text-center">
+          Get Started with <span className="text-[#7D3E1C]">3</span> Easy Steps
+        </h1>
+        <div
+          className="w-[63.9rem] h-[63.9rem] absolute left-[-18.2rem]"
+          style={{ background: `url(${BgPolygon})`, backgroundSize: "cover" }}
+        ></div>
+        <div className="flex mt-[8.8rem] justify-center items-center pb-[15.7rem] ">
+          <div
+            className="cursor-pointer"
+            onClick={() => {
+              setPg(!Pg);
+            }}
+          >
+            <div
+              className={` w-[41.4rem] h-[41.4rem] pl-[6.7rem] justify-center items-start flex-col ${
+                Pg ? "hidden" : "flex"
+              }`}
+              style={{
+                backgroundImage: `url(${Polygon}`,
+                backgroundSize: "cover",
+              }}
+            >
+              <p className="font-[700] text-[6rem]  leading-[7rem] text-white">
+                01
+              </p>
+              <p className="font-[700] text-[2.4rem] leading-[3.2rem] text-white ">
+                Select Product
+              </p>
+              <p className="font-[500] text-[1.6rem] leading-[2.8rem] w-[29.2rem] text-white">
+                Lorem ipsum dolor sit amet, consectetur adi piscing elit. Etiam
+                eu turpis molestie, dictum est a, mattis tellus. Sed dignissi
+                metus nec fringil la accumsan.
+              </p>
+            </div>
+            <div
+              className={` w-[41.4rem]  h-[41.4rem] pl-[6.7rem] flex justify-center items-start flex-col  ${
+                Pg ? "flex" : "hidden"
+              }`}
+              style={{
+                backgroundImage: `url(${PolygonHv}`,
+                backgroundSize: "cover",
+              }}
+            >
+              <div className="flex flex-col">
+                <button
+                  className="mr-[.5rem] w-[29.8rem] h-[4rem] rounded-[.6rem] text-[1.6rem] mb-[2.4rem] font-[700] leading-[3rem] text-white flex justify-center items-center"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, #7D3E1C -12.18%, #FA9C6A 51.93%, #7E3F1E 113.4%)",
+                    boxShadow: "4px 38px 62px rgba(0, 0, 0, 0.1)",
+                  }}
+                >
+                  Select product from stock
+                </button>
+                <button className="mr-[2rem] w-[29.8rem] h-[4rem] rounded-[.6rem] text-[1.6rem] font-[700] leading-[3rem] text-black flex justify-center items-center bg-white border-2 border-[#3E120A]">
+                  Customize your products
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div
+            className=" w-[41.4rem] h-[41.4rem] pl-[6.7rem] flex justify-center items-start flex-col"
+            style={{
+              backgroundImage: `url(${Polygonwhite}`,
+              backgroundSize: "cover",
+            }}
+          >
+            <p className="font-[700] text-[6rem]  leading-[7rem] text-[#666568]">
+              02
+            </p>
+            <p className="font-[700] text-[2.4rem] leading-[3.2rem] text-black mt-[.2rem] mb-[.67rem] ">
+              Select Product
+            </p>
+            <p className="font-[500] text-[1.6rem] leading-[2.8rem] w-[29.2rem] text-[#454545]">
+              Lorem ipsum dolor sit amet, consectetur adi piscing elit. Etiam eu
+              turpis molestie, dictum est a, mattis tellus. Sed dignissi metus
+              nec fringil la accumsan.
+            </p>
+          </div>
+          <div
+            className=" w-[41.4rem] h-[41.4rem] pl-[6.7rem] flex justify-center items-start flex-col "
+            style={{
+              backgroundImage: `url(${Polygonwhite}`,
+              backgroundSize: "cover",
+            }}
+          >
+            <p className="font-[700] text-[6rem]  leading-[7rem] text-[#666568]">
+              03
+            </p>
+            <p className="font-[700] text-[2.4rem] leading-[3.2rem] text-black mt-[.2rem] mb-[.67rem] mx-[12.2rem] ">
+              Select Product
+            </p>
+            <p className="font-[500] text-[1.6rem] leading-[2.8rem] w-[29.2rem] text-[#454545]">
+              Lorem ipsum dolor sit amet, consectetur adi piscing elit. Etiam eu
+              turpis molestie, dictum est a, mattis tellus. Sed dignissi metus
+              nec fringil la accumsan.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 4  */}
+      <section className="bg-[#F9F3E9]">
+        <h1 className="leading-[6rem] text-[6rem] font-[700] m-auto text-center">
+          Our Most <span className="text-[#7D3E1C]">Popular</span> Shelters
         </h1>
 
-        <div>
-          <div className="h-[6rem] w-[118.7rem] flex bg-white justify-center items-center my-[1rem]">
-            <h1 className="text-[1.8rem] leading-[2.4rem] text-[#282826] font-semibold w-[43.6rem]">
-              Veterinary Technician - The Gultch
-            </h1>
-            <p className="text-[1.4rem] leading-[1.8rem] ml-[33.6rem] w-[25.2rem] mr-[4.8rem]">
-              Nashville, TN
-            </p>
-            <p className="w-[3.2rem] h-[3.2rem] border border-black rounded-full text-[2rem] flex justify-center items-center"></p>
+        <div className="mt-[12.3rem]">
+          <div className="flex flex-row-reverse justify-between w-[164rem] m-auto">
+            {/* SIDE DETAILS  */}
+            <div className=" w-[77.4rem] ">
+            <h1 className="font-[700] text-[4rem] leading-[6rem] w-[100%] border-b-2 border-[#7D3E1C] mb-[4.8rem] text-[#131313]">Single Tube (Peak)</h1>
+              <div className="top bg-[rgba(102,101,104,0.08)] flex">
+                <button
+                  onClick={() => {
+                    setP1(true);
+                    setP2(false);
+                    setP3(false);
+                    setP4(false);
+                  }}
+                  className={`w-[19.3rem]   font-[500] text-[2rem]   leading-[2.8rem] h-[5.5rem] ${
+                    P1
+                      ? " border-2 border-[#7D3E1C] rounded-[.8rem] text-[#454545] bg-white"
+                      : "border-0 text-[#666568] rounded-none bg-transparent"
+                  }`}
+                >
+                  Overview
+                </button>
+                <button
+                  onClick={() => {
+                    setP1(false);
+                    setP2(true);
+                    setP3(false);
+                    setP4(false);
+                  }}
+                  className={`w-[19.3rem]   font-[500] text-[2rem]   leading-[2.8rem] h-[5.5rem] ${
+                    P2
+                      ? " border-2 border-[#7D3E1C] rounded-[.8rem] text-[#454545] bg-white"
+                      : "border-0 text-[#666568] rounded-none bg-transparent"
+                  }`}
+                >
+                  Features
+                </button>
+                <button
+                  onClick={() => {
+                    setP1(false);
+                    setP2(false);
+                    setP3(true);
+                    setP4(false);
+                  }}
+                  className={`w-[19.3rem]   font-[500] text-[2rem]   leading-[2.8rem] h-[5.5rem] ${
+                    P3
+                      ? " border-2 border-[#7D3E1C] rounded-[.8rem] text-[#454545] bg-white"
+                      : "border-0 text-[#666568] rounded-none bg-transparent"
+                  }`}
+                >
+                  Specifications
+                </button>
+                <button
+                  onClick={() => {
+                    setP1(false);
+                    setP2(false);
+                    setP3(false);
+                    setP4(true);
+                  }}
+                  className={`w-[19.3rem]   font-[500] text-[2rem]   leading-[2.8rem] h-[5.5rem] ${
+                    P4
+                      ? " border-2 border-[#7D3E1C] rounded-[.8rem] text-[#454545] bg-white"
+                      : "border-0 text-[#666568] rounded-none bg-transparent"
+                  }`}
+                >
+                  Reviews
+                </button>
+              </div>
+              <div className="pl-[3rem] bottom bg-white">
+                <div className={`panel flex-col ${P1 ? "flex" : "hidden"}`}>
+                  <div className="mb-[2.5rem] mt-[4.1rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Dimensions:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      30’ (W) x 78’6" (L)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Purlins on rafter:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      80 of 5 rows
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Truss tubes:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      2.3” – 15 GA (approx.)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Cover material:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      17 oz PVC fabric
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Roof pitch:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      6.5/12
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Door:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      {" "}
+                      12’ (W) x 11’ (H)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Purlin tubes:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      1.65” – 17 GA (approx.)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Truss tubes:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      {" "}
+                      2.3” – 15 GA (approx.)
+                    </p>
+                  </div>
+                </div>
+                <div className={`panel flex-col ${P2 ? "flex" : "hidden"}`}>
+                  <div className="mb-[2.5rem] mt-[4.1rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Dimensions:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      30’ (W) x 78’6" (L)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Purlins on rafter:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      80 of 5 rows
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Truss tubes:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      2.3” – 15 GA (approx.)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Cover material:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      17 oz PVC fabric
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Roof pitch:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      6.5/12
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Door:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      {" "}
+                      12’ (W) x 11’ (H)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Purlin tubes:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      1.65” – 17 GA (approx.)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Truss tubes:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      {" "}
+                      2.3” – 15 GA (approx.)
+                    </p>
+                  </div>
+                </div>
+                <div className={`panel flex-col ${P3 ? "flex" : "hidden"}`}>
+                  <div className="mb-[2.5rem] mt-[4.1rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Dimensions:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      30’ (W) x 78’6" (L)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Purlins on rafter:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      80 of 5 rows
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Truss tubes:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      2.3” – 15 GA (approx.)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Cover material:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      17 oz PVC fabric
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Roof pitch:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      6.5/12
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Door:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      {" "}
+                      12’ (W) x 11’ (H)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Purlin tubes:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      1.65” – 17 GA (approx.)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Truss tubes:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      {" "}
+                      2.3” – 15 GA (approx.)
+                    </p>
+                  </div>
+                </div>
+                <div className={`panel flex-col ${P4 ? "flex" : "hidden"}`}>
+                  <div className="mb-[2.5rem] mt-[4.1rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Dimensions:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      30’ (W) x 78’6" (L)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Purlins on rafter:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      80 of 5 rows
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Truss tubes:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      2.3” – 15 GA (approx.)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Cover material:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      17 oz PVC fabric
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Roof pitch:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      6.5/12
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Door:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      {" "}
+                      12’ (W) x 11’ (H)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Purlin tubes:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      1.65” – 17 GA (approx.)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Truss tubes:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      {" "}
+                      2.3” – 15 GA (approx.)
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* CAROUSEL  */}
+            <div className="w-[81rem] relative mb-[13.5rem]">
+              <div className="bg-white w-[100%] h-[61.4rem] flex justify-center items-center border-2 border-[#7D3E1C]">
+                <img
+                  src={CR1}
+                  alt=""
+                  className={`${carousel1 == 1 ? "flex" : "hidden"}`}
+                />
+                <img
+                  src={CR1}
+                  alt=""
+                  className={`${carousel1 == 2 ? "flex" : "hidden"}`}
+                />
+                <img
+                  src={CR1}
+                  alt=""
+                  className={`${carousel1 == 3 ? "flex" : "hidden"}`}
+                />
+              </div>
+              <div className="bottom absolute top-[54.8rem] left-[7.8rem]">
+                <div className="flex w-[65.4rem] justify-between m-auto">
+                  <div
+                    className={`flex justify-center items-center w-[20.2rem] h-[13.1rem] cursor-pointer bg-white ${
+                      carousel1 == 1 ? "border-2 border-[#7D3E1C]" : "border-0"
+                    }`}
+                    style={{ boxShadow: "5px 5px 20px rgba(22, 21, 64, 0.1)" }}
+                    onClick={() => {
+                      setcarousel(1);
+                    }}
+                  >
+                    <img src={CR1B1} alt="" />
+                  </div>
+                  <div
+                    className={`flex justify-center items-center w-[20.2rem] h-[13.1rem] cursor-pointer bg-white ${
+                      carousel1 == 2 ? "border-2 border-[#7D3E1C]" : "border-0"
+                    }`}
+                    style={{ boxShadow: "5px 5px 20px rgba(22, 21, 64, 0.1)" }}
+                    onClick={() => {
+                      setcarousel(2);
+                    }}
+                  >
+                    <img src={CR1B2} alt="" />
+                  </div>
+                  <div
+                    className={`flex justify-center items-center w-[20.2rem] h-[13.1rem] cursor-pointer bg-white ${
+                      carousel1 == 3 ? "border-2 border-[#7D3E1C]" : "border-0"
+                    }`}
+                    style={{ boxShadow: "5px 5px 20px rgba(22, 21, 64, 0.1)" }}
+                    onClick={() => {
+                      setcarousel(3);
+                    }}
+                  >
+                    <img src={CR1B3} alt="" />
+                  </div>
+                </div>
+              </div>
+              <div className="flex justify-between w-[77rem] m-auto absolute top-[59.6rem] left-[2rem]">
+                <img
+                  src={Prev}
+                  alt=""
+                  className="w-[3.4rem] h-[3.4rem] cursor-pointer"
+                  onClick={() => {
+                    if (carousel1 == 1) {
+                      return;
+                    } else {
+                      setcarousel(carousel1 - 1);
+                    }
+                  }}
+                />
+                <img
+                  src={Next}
+                  alt=""
+                  className="w-[3.4rem] h-[3.4rem] cursor-pointer"
+                  onClick={() => {
+                    if (carousel1 == 3) {
+                      return;
+                    } else {
+                      setcarousel(carousel1 + 1);
+                    }
+                  }}
+                />
+              </div>
+            </div>
           </div>
-          <div className="h-[6rem] w-[118.7rem] flex bg-white justify-center items-center my-[1rem]">
-            <h1 className="text-[1.8rem] leading-[2.4rem] text-[#282826] font-semibold w-[43.6rem]">
-              Veterinary Technician - West Loop
-            </h1>
-            <p className="text-[1.4rem] leading-[1.8rem] ml-[33.6rem] w-[25.2rem] mr-[4.8rem]">
-              Chicago, IL
-            </p>
-            <p className="w-[3.2rem] h-[3.2rem] border border-black rounded-full text-[2rem] flex justify-center items-center"></p>
+          <div className=" w-[164rem] h-[13rem] flex justify-between items-center bg-white px-[8.4rem] m-auto" style={{boxShadow: "5px 5px 20px rgba(22, 21, 64, 0.1)"}}>
+            <p className="font-[900] text-[4.86rem] leading-[9.72rem]">$9,499.05 CAD</p>
+            <div className="flex justify-center items-center" >
+           <p className="font-[500] text-[2rem] leading-[2.8rem] mr-[3rem]">Quantity:</p>
+            <div className="mr-[2.4rem] w-[14.6rem] h-[5rem] rounded-[.6rem] text-black font-[700] text-[2.4rem] leading-[3.2] flex justify-center items-center border-2 border-[#7D3E1C]">
+            <button className="text-black" onClick={()=>{setQ1(Q1-1)}}>-</button>
+            <span className="text-black font-[700] text-[2.4rem] leading-[3.2] mx-[3rem]">{Q1}</span>
+            <button className="text-black" onClick={()=>{setQ1(Q1+1)}}>+</button>
+            </div>
+            <button
+              className="mr-[.5rem] w-[18rem] h-[5rem] rounded-[.6rem] text-[1.6rem] font-[700] leading-[3rem] text-white flex justify-center items-center"
+              style={{
+                background:
+                  "linear-gradient(90deg, #7D3E1C -12.18%, #FA9C6A 51.93%, #7E3F1E 113.4%)",
+                boxShadow: "4px 38px 62px rgba(0, 0, 0, 0.1)",
+              }}
+            >
+              Order Now
+              <img src={Larrow} className="mr-[1rem]" alt="" />
+            </button>
           </div>
-          <div className="h-[6rem] w-[118.7rem] flex bg-white justify-center items-center my-[1rem]">
-            <h1 className="text-[1.8rem] leading-[2.4rem] text-[#282826] font-semibold w-[43.6rem]">
-              Veterinary Technician - Coconut Grove
-            </h1>
-            <p className="text-[1.4rem] leading-[1.8rem] ml-[33.6rem] w-[25.2rem] mr-[4.8rem]">
-              Miami, FL
-            </p>
-            <p className="w-[3.2rem] h-[3.2rem] border border-black rounded-full text-[2rem] flex justify-center items-center"></p>
-          </div>
-          <div className="h-[6rem] w-[118.7rem] flex bg-white justify-center items-center my-[1rem]">
-            <h1 className="text-[1.8rem] leading-[2.4rem] text-[#282826] font-semibold w-[43.6rem]">
-              Veterinary Technician - Wynwood
-            </h1>
-            <p className="text-[1.4rem] leading-[1.8rem] ml-[33.6rem] w-[25.2rem] mr-[4.8rem]">
-              Miami, FL
-            </p>
-            <p className="w-[3.2rem] h-[3.2rem] border border-black rounded-full text-[2rem] flex justify-center items-center"></p>
-          </div>
-          <div className="h-[6rem] w-[118.7rem] flex bg-white justify-center items-center my-[1rem]">
-            <h1 className="text-[1.8rem] leading-[2.4rem] text-[#282826] font-semibold w-[43.6rem]">
-              Veterinary Technician - The Gultch
-            </h1>
-            <p className="text-[1.4rem] leading-[1.8rem] ml-[33.6rem] w-[25.2rem] mr-[4.8rem]">
-              Nashville, TN
-            </p>
-            <p className="w-[3.2rem] h-[3.2rem] border border-black rounded-full text-[2rem] flex justify-center items-center"></p>
-          </div>
-          <div className="h-[6rem] w-[118.7rem] flex bg-white justify-center items-center my-[1rem]">
-            <h1 className="text-[1.8rem] leading-[2.4rem] text-[#282826] font-semibold w-[43.6rem]">
-              Veterinary Technician - West Loop
-            </h1>
-            <p className="text-[1.4rem] leading-[1.8rem] ml-[33.6rem] w-[25.2rem] mr-[4.8rem]">
-              Chicago, IL
-            </p>
-            <p className="w-[3.2rem] h-[3.2rem] border border-black rounded-full text-[2rem] flex justify-center items-center"></p>
-          </div>
-          <div className="h-[6rem] w-[118.7rem] flex bg-white justify-center items-center mt-[8rem]">
-            <h1 className="text-[1.8rem] leading-[2.4rem] text-[#282826] font-semibold w-[43.6rem]">
-              Veterinary Technician - Wynwood
-            </h1>
-            <p className="text-[1.4rem] leading-[1.8rem] ml-[33.6rem] w-[25.2rem] mr-[4.8rem]">
-              Miami, FL
-            </p>
-            <p className="w-[3.2rem] h-[3.2rem] border border-black rounded-full text-[2rem] flex justify-center items-center"></p>
           </div>
         </div>
-
-        <button className="border border-black px-[3rem] py-[1.6rem] text-[1.4rem] leading-[2rem] rounded-[5rem] mx-auto mt-[8rem]">
-          VIEW ALL
-        </button>
-      </section>
-
-      <section className="bg-[#FAF6F4] pt-[9.9rem] pb-[10rem] flex flex-col justify-center items-end">
-        <h1 className="text-[7rem] mx-auto mb-[9rem] leading-[8rem]  text-left w-screen pl-[8.9rem]">
-          <span className="text-yellow-500"> Good Stories </span>
-          from GoodVets
-        </h1>
-        <div className=" GStories max-w-[127.7rem]">
-          <Slider {...settings}>
-            <div className=" h-[58.4rem] bg-white w-[41.7rem]">
-              <div className="w-[41.7rem] h-[40rem] bg-slate-400"></div>
-              <p className="text-[2.2rem] leading-[2.9rem] font-semibold mt-[3rem] ml-[2rem] w-[34.3rem]">
-                How to build a successful career in the veterinary industry.
-              </p>
-              <p className="text-[1.4rem] leading-[1.8rem] mt-[2rem] ml-[2rem] ">
-                BY AUTHOR NAME <br />
-                <span className="text-[#D9C7B8]"> AUTHOR TITLE</span>
-              </p>
+        <div className="mt-[14rem]">
+          <div className="flex flex-row justify-between w-[164rem] m-auto">
+            {/* SIDE DETAILS  */}
+            <div className=" w-[77.4rem] ">
+            <h1 className="font-[700] text-[4rem] leading-[6rem] w-[100%] border-b-2 border-[#7D3E1C] mb-[4.8rem] text-[#131313]">Dual Truss</h1>
+              <div className="top bg-[rgba(102,101,104,0.08)] flex">
+                <button
+                  onClick={() => {
+                    setP1(true);
+                    setP2(false);
+                    setP3(false);
+                    setP4(false);
+                  }}
+                  className={`w-[19.3rem]   font-[500] text-[2rem]   leading-[2.8rem] h-[5.5rem] ${
+                    P1
+                      ? " border-2 border-[#7D3E1C] rounded-[.8rem] text-[#454545] bg-white"
+                      : "border-0 text-[#666568] rounded-none bg-transparent"
+                  }`}
+                >
+                  Overview
+                </button>
+                <button
+                  onClick={() => {
+                    setP1(false);
+                    setP2(true);
+                    setP3(false);
+                    setP4(false);
+                  }}
+                  className={`w-[19.3rem]   font-[500] text-[2rem]   leading-[2.8rem] h-[5.5rem] ${
+                    P2
+                      ? " border-2 border-[#7D3E1C] rounded-[.8rem] text-[#454545] bg-white"
+                      : "border-0 text-[#666568] rounded-none bg-transparent"
+                  }`}
+                >
+                  Features
+                </button>
+                <button
+                  onClick={() => {
+                    setP1(false);
+                    setP2(false);
+                    setP3(true);
+                    setP4(false);
+                  }}
+                  className={`w-[19.3rem]   font-[500] text-[2rem]   leading-[2.8rem] h-[5.5rem] ${
+                    P3
+                      ? " border-2 border-[#7D3E1C] rounded-[.8rem] text-[#454545] bg-white"
+                      : "border-0 text-[#666568] rounded-none bg-transparent"
+                  }`}
+                >
+                  Specifications
+                </button>
+                <button
+                  onClick={() => {
+                    setP1(false);
+                    setP2(false);
+                    setP3(false);
+                    setP4(true);
+                  }}
+                  className={`w-[19.3rem]   font-[500] text-[2rem]   leading-[2.8rem] h-[5.5rem] ${
+                    P4
+                      ? " border-2 border-[#7D3E1C] rounded-[.8rem] text-[#454545] bg-white"
+                      : "border-0 text-[#666568] rounded-none bg-transparent"
+                  }`}
+                >
+                  Reviews
+                </button>
+              </div>
+              <div className="pl-[3rem] bottom bg-white">
+                <div className={`panel flex-col ${P1 ? "flex" : "hidden"}`}>
+                  <div className="mb-[2.5rem] mt-[4.1rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Dimensions:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      30’ (W) x 78’6" (L)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Purlins on rafter:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      80 of 5 rows
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Truss tubes:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      2.3” – 15 GA (approx.)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Cover material:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      17 oz PVC fabric
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Roof pitch:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      6.5/12
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Door:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      {" "}
+                      12’ (W) x 11’ (H)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Purlin tubes:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      1.65” – 17 GA (approx.)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Truss tubes:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      {" "}
+                      2.3” – 15 GA (approx.)
+                    </p>
+                  </div>
+                </div>
+                <div className={`panel flex-col ${P2 ? "flex" : "hidden"}`}>
+                  <div className="mb-[2.5rem] mt-[4.1rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Dimensions:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      30’ (W) x 78’6" (L)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Purlins on rafter:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      80 of 5 rows
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Truss tubes:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      2.3” – 15 GA (approx.)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Cover material:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      17 oz PVC fabric
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Roof pitch:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      6.5/12
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Door:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      {" "}
+                      12’ (W) x 11’ (H)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Purlin tubes:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      1.65” – 17 GA (approx.)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Truss tubes:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      {" "}
+                      2.3” – 15 GA (approx.)
+                    </p>
+                  </div>
+                </div>
+                <div className={`panel flex-col ${P3 ? "flex" : "hidden"}`}>
+                  <div className="mb-[2.5rem] mt-[4.1rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Dimensions:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      30’ (W) x 78’6" (L)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Purlins on rafter:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      80 of 5 rows
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Truss tubes:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      2.3” – 15 GA (approx.)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Cover material:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      17 oz PVC fabric
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Roof pitch:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      6.5/12
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Door:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      {" "}
+                      12’ (W) x 11’ (H)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Purlin tubes:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      1.65” – 17 GA (approx.)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Truss tubes:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      {" "}
+                      2.3” – 15 GA (approx.)
+                    </p>
+                  </div>
+                </div>
+                <div className={`panel flex-col ${P4 ? "flex" : "hidden"}`}>
+                  <div className="mb-[2.5rem] mt-[4.1rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Dimensions:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      30’ (W) x 78’6" (L)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Purlins on rafter:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      80 of 5 rows
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Truss tubes:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      2.3” – 15 GA (approx.)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Cover material:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      17 oz PVC fabric
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Roof pitch:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      6.5/12
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Door:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      {" "}
+                      12’ (W) x 11’ (H)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Purlin tubes:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      1.65” – 17 GA (approx.)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Truss tubes:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      {" "}
+                      2.3” – 15 GA (approx.)
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className=" h-[58.4rem] bg-white w-[41.7rem]">
-              <div className="w-[41.7rem] h-[40rem] bg-slate-400"></div>
-              <p className="text-[2.2rem] leading-[2.9rem] font-semibold mt-[3rem] ml-[2rem] w-[34.3rem]">
-                Dr. Sheela Moss on how being a mentor enriches her career.
-              </p>
-              <p className="text-[1.4rem] leading-[1.8rem] mt-[2rem] ml-[2rem] ">
-                BY AUTHOR NAME <br />
-                <span className="text-[#D9C7B8]"> AUTHOR TITLE</span>
-              </p>
+            {/* CAROUSEL  */}
+            <div className="w-[81rem] relative mb-[13.5rem]">
+              <div className="bg-white w-[100%] h-[61.4rem] flex justify-center items-center border-2 border-[#7D3E1C]">
+                <img
+                  src={CR2}
+                  alt=""
+                  className={`${carousel1 == 1 ? "flex" : "hidden"}`}
+                />
+                <img
+                  src={CR2}
+                  alt=""
+                  className={`${carousel1 == 2 ? "flex" : "hidden"}`}
+                />
+                <img
+                  src={CR2}
+                  alt=""
+                  className={`${carousel1 == 3 ? "flex" : "hidden"}`}
+                />
+              </div>
+              <div className="bottom absolute top-[54.8rem] left-[7.8rem]">
+                <div className="flex w-[65.4rem] justify-between m-auto">
+                  <div
+                    className={`flex justify-center items-center w-[20.2rem] h-[13.1rem] cursor-pointer bg-white ${
+                      carousel1 == 1 ? "border-2 border-[#7D3E1C]" : "border-0"
+                    }`}
+                    style={{ boxShadow: "5px 5px 20px rgba(22, 21, 64, 0.1)" }}
+                    onClick={() => {
+                      setcarousel(1);
+                    }}
+                  >
+                    <img src={CR2B1} alt="" />
+                  </div>
+                  <div
+                    className={`flex justify-center items-center w-[20.2rem] h-[13.1rem] cursor-pointer bg-white ${
+                      carousel1 == 2 ? "border-2 border-[#7D3E1C]" : "border-0"
+                    }`}
+                    style={{ boxShadow: "5px 5px 20px rgba(22, 21, 64, 0.1)" }}
+                    onClick={() => {
+                      setcarousel(2);
+                    }}
+                  >
+                    <img src={CR2B2} alt="" />
+                  </div>
+                  <div
+                    className={`flex justify-center items-center w-[20.2rem] h-[13.1rem] cursor-pointer bg-white ${
+                      carousel1 == 3 ? "border-2 border-[#7D3E1C]" : "border-0"
+                    }`}
+                    style={{ boxShadow: "5px 5px 20px rgba(22, 21, 64, 0.1)" }}
+                    onClick={() => {
+                      setcarousel(3);
+                    }}
+                  >
+                    <img src={CR2B3} alt="" />
+                  </div>
+                </div>
+              </div>
+              <div className="flex justify-between w-[77rem] m-auto absolute top-[59.6rem] left-[2rem]">
+                <img
+                  src={Prev}
+                  alt=""
+                  className="w-[3.4rem] h-[3.4rem] cursor-pointer"
+                  onClick={() => {
+                    if (carousel1 == 1) {
+                      return;
+                    } else {
+                      setcarousel(carousel1 - 1);
+                    }
+                  }}
+                />
+                <img
+                  src={Next}
+                  alt=""
+                  className="w-[3.4rem] h-[3.4rem] cursor-pointer"
+                  onClick={() => {
+                    if (carousel1 == 3) {
+                      return;
+                    } else {
+                      setcarousel(carousel1 + 1);
+                    }
+                  }}
+                />
+              </div>
             </div>
-            <div className=" h-[58.4rem] bg-white w-[41.7rem]">
-              <div className="w-[41.7rem] h-[40rem] bg-slate-400"></div>
-              <p className="text-[2.2rem] leading-[2.9rem] font-semibold mt-[3rem] ml-[2rem] w-[34.3rem]">
-                Dr. Sheela Moss on how being a mentor enriches her career.
-              </p>
-              <p className="text-[1.4rem] leading-[1.8rem] mt-[2rem] ml-[2rem] ">
-                BY AUTHOR NAME <br />
-                <span className="text-[#D9C7B8]"> AUTHOR TITLE</span>
-              </p>
+          </div>
+          <div className=" w-[164rem] h-[13rem] flex justify-between items-center bg-white px-[8.4rem] m-auto" style={{boxShadow: "5px 5px 20px rgba(22, 21, 64, 0.1)"}}>
+            <p className="font-[900] text-[4.86rem] leading-[9.72rem]">$9,499.05 CAD</p>
+            <div className="flex justify-center items-center" >
+           <p className="font-[500] text-[2rem] leading-[2.8rem] mr-[3rem]">Quantity:</p>
+            <div className="mr-[2.4rem] w-[14.6rem] h-[5rem] rounded-[.6rem] text-black font-[700] text-[2.4rem] leading-[3.2] flex justify-center items-center border-2 border-[#7D3E1C]">
+            <button className="text-black" onClick={()=>{setQ2(Q2-1)}}>-</button>
+            <span className="text-black font-[700] text-[2.4rem] leading-[3.2] mx-[3rem]">{Q2}</span>
+            <button className="text-black" onClick={()=>{setQ2(Q2+1)}}>+</button>
             </div>
-            <div className=" h-[58.4rem] bg-white w-[41.7rem]">
-              <div className="w-[41.7rem] h-[40rem] bg-slate-400"></div>
-              <p className="text-[2.2rem] leading-[2.9rem] font-semibold mt-[3rem] ml-[2rem] w-[34.3rem]">
-                Dr. Sheela Moss on how being a mentor enriches her career.
-              </p>
-              <p className="text-[1.4rem] leading-[1.8rem] mt-[2rem] ml-[2rem] ">
-                BY AUTHOR NAME <br />
-                <span className="text-[#D9C7B8]"> AUTHOR TITLE</span>
-              </p>
-            </div>
-            {/* <div className="ml-[7.8rem] h-[58.4rem] bg-white w-[41.7rem] overflow-hidden">
-            <div className="w-[41.7rem] h-[40rem] bg-slate-400"></div>
-            <p className="text-[2.2rem] leading-[2.9rem] font-semibold mt-[3rem] ml-[2rem] w-[34.3rem]">
-              Take a Tour of GoodVets in Streeterville, Chicago.
-            </p>
-            <p className="text-[1.4rem] leading-[1.8rem] mt-[2rem] ml-[2rem] ">
-              BY AUTHOR NAME <br />
-              <span className="text-[#D9C7B8]"> AUTHOR TITLE</span>
-            </p>
-          </div> */}
-          </Slider>
+            <button
+              className="mr-[.5rem] w-[18rem] h-[5rem] rounded-[.6rem] text-[1.6rem] font-[700] leading-[3rem] text-white flex justify-center items-center"
+              style={{
+                background:
+                  "linear-gradient(90deg, #7D3E1C -12.18%, #FA9C6A 51.93%, #7E3F1E 113.4%)",
+                boxShadow: "4px 38px 62px rgba(0, 0, 0, 0.1)",
+              }}
+            >
+              Order Now
+              <img src={Larrow} className="mr-[1rem]" alt="" />
+            </button>
+          </div>
+          </div>
         </div>
-        <button className="border border-black px-[3rem] py-[1.6rem] text-[1.4rem] leading-[2rem] rounded-[5rem] mx-auto mt-[8rem] hover:bg-[#FEC20D] hover:border-[#FEC20D] ">
-          MORE GOOD STORIES
-        </button>
-      </section>
-
-      <section className="pl-[8.9rem] pb-[12rem]">
-        <h1 className="text-[4rem] leading-[4.8rem] w-[55.8rem] mt-[8.1rem] mb-[6rem] text-[#262626]">
-          Keep up with what’s <br /> happening at GoodVets!
-        </h1>
-        <div className="w-[124.2rem] border-b border-black ">
-          {/* <h1 className="text-[2.2rem] leading-[2.9rem] font-semibold text-[#262626]">
-            Enter your email
-          </h1> */}
-          <input
-            type="text "
-            className="text-[2.2rem] leading-[2.9rem] font-semibold w-[100%] hover:placeholder:text-[#FEC20D] outline-none"
-            placeholder="Enter Your Email"
-          />
+        <div className="mt-[12.3rem]">
+          <div className="flex flex-row-reverse justify-between w-[164rem] m-auto">
+            {/* SIDE DETAILS  */}
+            <div className=" w-[77.4rem] ">
+            <h1 className="font-[700] text-[4rem] leading-[6rem] w-[100%] border-b-2 border-[#7D3E1C] mb-[4.8rem] text-[#131313]">Container Mounted</h1>
+              <div className="top bg-[rgba(102,101,104,0.08)] flex">
+                <button
+                  onClick={() => {
+                    setP1(true);
+                    setP2(false);
+                    setP3(false);
+                    setP4(false);
+                  }}
+                  className={`w-[19.3rem]   font-[500] text-[2rem]   leading-[2.8rem] h-[5.5rem] ${
+                    P1
+                      ? " border-2 border-[#7D3E1C] rounded-[.8rem] text-[#454545] bg-white"
+                      : "border-0 text-[#666568] rounded-none bg-transparent"
+                  }`}
+                >
+                  Overview
+                </button>
+                <button
+                  onClick={() => {
+                    setP1(false);
+                    setP2(true);
+                    setP3(false);
+                    setP4(false);
+                  }}
+                  className={`w-[19.3rem]   font-[500] text-[2rem]   leading-[2.8rem] h-[5.5rem] ${
+                    P2
+                      ? " border-2 border-[#7D3E1C] rounded-[.8rem] text-[#454545] bg-white"
+                      : "border-0 text-[#666568] rounded-none bg-transparent"
+                  }`}
+                >
+                  Features
+                </button>
+                <button
+                  onClick={() => {
+                    setP1(false);
+                    setP2(false);
+                    setP3(true);
+                    setP4(false);
+                  }}
+                  className={`w-[19.3rem]   font-[500] text-[2rem]   leading-[2.8rem] h-[5.5rem] ${
+                    P3
+                      ? " border-2 border-[#7D3E1C] rounded-[.8rem] text-[#454545] bg-white"
+                      : "border-0 text-[#666568] rounded-none bg-transparent"
+                  }`}
+                >
+                  Specifications
+                </button>
+                <button
+                  onClick={() => {
+                    setP1(false);
+                    setP2(false);
+                    setP3(false);
+                    setP4(true);
+                  }}
+                  className={`w-[19.3rem]   font-[500] text-[2rem]   leading-[2.8rem] h-[5.5rem] ${
+                    P4
+                      ? " border-2 border-[#7D3E1C] rounded-[.8rem] text-[#454545] bg-white"
+                      : "border-0 text-[#666568] rounded-none bg-transparent"
+                  }`}
+                >
+                  Reviews
+                </button>
+              </div>
+              <div className="pl-[3rem] bottom bg-white">
+                <div className={`panel flex-col ${P1 ? "flex" : "hidden"}`}>
+                  <div className="mb-[2.5rem] mt-[4.1rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Dimensions:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      30’ (W) x 78’6" (L)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Purlins on rafter:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      80 of 5 rows
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Truss tubes:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      2.3” – 15 GA (approx.)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Cover material:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      17 oz PVC fabric
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Roof pitch:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      6.5/12
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Door:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      {" "}
+                      12’ (W) x 11’ (H)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Purlin tubes:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      1.65” – 17 GA (approx.)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Truss tubes:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      {" "}
+                      2.3” – 15 GA (approx.)
+                    </p>
+                  </div>
+                </div>
+                <div className={`panel flex-col ${P2 ? "flex" : "hidden"}`}>
+                  <div className="mb-[2.5rem] mt-[4.1rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Dimensions:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      30’ (W) x 78’6" (L)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Purlins on rafter:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      80 of 5 rows
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Truss tubes:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      2.3” – 15 GA (approx.)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Cover material:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      17 oz PVC fabric
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Roof pitch:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      6.5/12
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Door:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      {" "}
+                      12’ (W) x 11’ (H)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Purlin tubes:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      1.65” – 17 GA (approx.)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Truss tubes:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      {" "}
+                      2.3” – 15 GA (approx.)
+                    </p>
+                  </div>
+                </div>
+                <div className={`panel flex-col ${P3 ? "flex" : "hidden"}`}>
+                  <div className="mb-[2.5rem] mt-[4.1rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Dimensions:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      30’ (W) x 78’6" (L)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Purlins on rafter:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      80 of 5 rows
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Truss tubes:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      2.3” – 15 GA (approx.)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Cover material:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      17 oz PVC fabric
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Roof pitch:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      6.5/12
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Door:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      {" "}
+                      12’ (W) x 11’ (H)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Purlin tubes:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      1.65” – 17 GA (approx.)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Truss tubes:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      {" "}
+                      2.3” – 15 GA (approx.)
+                    </p>
+                  </div>
+                </div>
+                <div className={`panel flex-col ${P4 ? "flex" : "hidden"}`}>
+                  <div className="mb-[2.5rem] mt-[4.1rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Dimensions:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      30’ (W) x 78’6" (L)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Purlins on rafter:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      80 of 5 rows
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Truss tubes:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      2.3” – 15 GA (approx.)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Cover material:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      17 oz PVC fabric
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Roof pitch:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      6.5/12
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Door:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      {" "}
+                      12’ (W) x 11’ (H)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Purlin tubes:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      1.65” – 17 GA (approx.)
+                    </p>
+                  </div>
+                  <div className="mb-[2.5rem] flex justify-start items-center">
+                    <img src={Tick} alt="" />
+                    <p className="ml-[1.5rem] mr-[1.2rem] font-[500] text-[2rem]  text-[#94502B] leading-[2.8rem]">
+                      Truss tubes:
+                    </p>
+                    <p className="font-[500] text-[2rem]  text-[#454545] leading-[2.8rem]">
+                      {" "}
+                      2.3” – 15 GA (approx.)
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* CAROUSEL  */}
+            <div className="w-[81rem] relative mb-[13.5rem]">
+              <div className="bg-white w-[100%] h-[61.4rem] flex justify-center items-center border-2 border-[#7D3E1C]">
+                <img
+                  src={CR3}
+                  alt=""
+                  className={`${carousel1 == 1 ? "flex" : "hidden"}`}
+                />
+                <img
+                  src={CR3}
+                  alt=""
+                  className={`${carousel1 == 2 ? "flex" : "hidden"}`}
+                />
+                <img
+                  src={CR3}
+                  alt=""
+                  className={`${carousel1 == 3 ? "flex" : "hidden"}`}
+                />
+              </div>
+              <div className="bottom absolute top-[54.8rem] left-[7.8rem]">
+                <div className="flex w-[65.4rem] justify-between m-auto">
+                  <div
+                    className={`flex justify-center items-center w-[20.2rem] h-[13.1rem] cursor-pointer bg-white ${
+                      carousel1 == 1 ? "border-2 border-[#7D3E1C]" : "border-0"
+                    }`}
+                    style={{ boxShadow: "5px 5px 20px rgba(22, 21, 64, 0.1)" }}
+                    onClick={() => {
+                      setcarousel(1);
+                    }}
+                  >
+                    <img src={CR3B1} alt="" />
+                  </div>
+                  <div
+                    className={`flex justify-center items-center w-[20.2rem] h-[13.1rem] cursor-pointer bg-white ${
+                      carousel1 == 2 ? "border-2 border-[#7D3E1C]" : "border-0"
+                    }`}
+                    style={{ boxShadow: "5px 5px 20px rgba(22, 21, 64, 0.1)" }}
+                    onClick={() => {
+                      setcarousel(2);
+                    }}
+                  >
+                    <img src={CR3B2} alt="" />
+                  </div>
+                  <div
+                    className={`flex justify-center items-center w-[20.2rem] h-[13.1rem] cursor-pointer bg-white ${
+                      carousel1 == 3 ? "border-2 border-[#7D3E1C]" : "border-0"
+                    }`}
+                    style={{ boxShadow: "5px 5px 20px rgba(22, 21, 64, 0.1)" }}
+                    onClick={() => {
+                      setcarousel(3);
+                    }}
+                  >
+                    <img src={CR3B3} alt="" />
+                  </div>
+                </div>
+              </div>
+              <div className="flex justify-between w-[77rem] m-auto absolute top-[59.6rem] left-[2rem]">
+                <img
+                  src={Prev}
+                  alt=""
+                  className="w-[3.4rem] h-[3.4rem] cursor-pointer"
+                  onClick={() => {
+                    if (carousel1 == 1) {
+                      return;
+                    } else {
+                      setcarousel(carousel1 - 1);
+                    }
+                  }}
+                />
+                <img
+                  src={Next}
+                  alt=""
+                  className="w-[3.4rem] h-[3.4rem] cursor-pointer"
+                  onClick={() => {
+                    if (carousel1 == 3) {
+                      return;
+                    } else {
+                      setcarousel(carousel1 + 1);
+                    }
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+          <div className=" w-[164rem] h-[13rem] flex justify-between items-center bg-white px-[8.4rem] m-auto" style={{boxShadow: "5px 5px 20px rgba(22, 21, 64, 0.1)"}}>
+            <p className="font-[900] text-[4.86rem] leading-[9.72rem]">$9,499.05 CAD</p>
+            <div className="flex justify-center items-center" >
+           <p className="font-[500] text-[2rem] leading-[2.8rem] mr-[3rem]">Quantity:</p>
+            <div className="mr-[2.4rem] w-[14.6rem] h-[5rem] rounded-[.6rem] text-black font-[700] text-[2.4rem] leading-[3.2] flex justify-center items-center border-2 border-[#7D3E1C]">
+            <button className="text-black" onClick={()=>{setQ3(Q3-1)}}>-</button>
+            <span className="text-black font-[700] text-[2.4rem] leading-[3.2] mx-[3rem]">{Q3}</span>
+            <button className="text-black" onClick={()=>{setQ3(Q3+1)}}>+</button>
+            </div>
+            <button
+              className="mr-[.5rem] w-[18rem] h-[5rem] rounded-[.6rem] text-[1.6rem] font-[700] leading-[3rem] text-white flex justify-center items-center"
+              style={{
+                background:
+                  "linear-gradient(90deg, #7D3E1C -12.18%, #FA9C6A 51.93%, #7E3F1E 113.4%)",
+                boxShadow: "4px 38px 62px rgba(0, 0, 0, 0.1)",
+              }}
+            >
+              Order Now
+              <img src={Larrow} className="mr-[1rem]" alt="" />
+            </button>
+          </div>
+          </div>
         </div>
       </section>
 
+
+      {/* SECTION5  */}
+      <section className="pt-[14rem] bg-[#F9F3E9]"> 
+         <div
+          className="h-[20.9rem] flex justify-center items-center "
+          style={{
+            background:
+              "linear-gradient(270deg, #000000 0%, #5A5A5A 50.01%, #000000 100%)",
+          }}
+        >
+          <div className="w-[164rem] m-auto flex justify-between items-center ">
+            <div>
+<p className="text-[2.4rem] font-[500] leading-[2.4rem] text-white mb-[1.4rem]">Have Any Ideas In Your Mind?</p>
+            <p className="text-[4rem] font-[700] leading-[6rem] text-white">
+            Let’s Talk About Your Next Project Right Now
+            </p>
+            
+            </div>
+            <div className="flex">
+              <button
+                className="mr-[2rem] w-[19.7rem] h-[5rem] rounded-[.6rem] text-[1.6rem] font-[700] leading-[3rem] text-white flex justify-center items-center"
+                style={{
+                  background:
+                    "linear-gradient(90deg, #7D3E1C -12.18%, #FA9C6A 51.93%, #7E3F1E 113.4%)",
+                  boxShadow: "4px 38px 62px rgba(0, 0, 0, 0.1)",
+                }}
+              >
+                <img src={Phone} className="mr-[1rem]" alt="" />
+                123 456 789
+              </button>
+              <button
+                className="mr-[2rem] w-[16.5rem] border-2 border-[#7D3E1C] h-[5rem] rounded-[.6rem] text-[1.6rem] font-[700] leading-[3rem] text-white flex justify-center items-center">
+                <img src={Chat} className="mr-[1rem]" alt="" />
+                Live Chat
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
       <footer className="flex flex-col justify-between bg-[#262626] text-[1.4rem] leading-[1.8rem] text-white h-[42.6rem] pt-[6rem]">
         <div className="flex">
           <div className="ml-[3.4rem]">
