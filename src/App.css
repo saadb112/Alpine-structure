@@ -8,15 +8,18 @@ html{
   font-family: 'Satoshi', sans-serif;
 
 }
-.slick-track{
-  display: flex !important;
-}
-.GStories .slick-slider .slick-list .slick-track .slick-slide{
-  margin-right: 7.8rem;
-  /* margin-right: 2.3rem; */
+.gradient-text{
+  background: linear-gradient(90deg, #7D3E1C -12.18%, #FA9C6A 51.93%, #7E3F1E 113.4%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+-webkit-text-fill-color:transparent;
 
 }
-.Modular .slick-slider .slick-list .slick-track .slick-slide{
-  margin-right: 2.3rem;
 
+
+.gradient-border{
+  border: .319rem solid;
+
+border-image: linear-gradient(90deg, #7D3E1C -12.18%, #FA9C6A 51.93%, #7E3F1E 113.4%);
 }
